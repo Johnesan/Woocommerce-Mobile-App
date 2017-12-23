@@ -1,4 +1,4 @@
-# Wikeplus-App
+# Woocommerce-Mobile-App
 
 This is a demo app for a woocommerce online store.
 

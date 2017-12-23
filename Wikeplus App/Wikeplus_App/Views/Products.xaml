@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wikeplus_App.Views.Products"
+             Title="Products"
+             BackgroundColor="#c4c3c0">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="productsListView"
+                      HasUnevenRows="True"                       
+                  VerticalOptions="FillAndExpand"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame HasShadow="True" Margin="8">
+                                    <StackLayout>
+                                        <Label Text="{Binding title}" FontSize="Large"/>
+                                        <Image Source="{Binding featured_src}"/>
+                                        <Label Text="{Binding created_at , StringFormat='{0:dd/MM/yyyy}'}" FontSize="Small" FontAttributes="Italic"/>
+                                        <Label Text="{Binding price , StringFormat='{0} Naira'}" TextColor="Red"/>
+                                    </StackLayout>
+                                </Frame>
+                        
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

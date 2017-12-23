@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wikeplus_App.Views.Orders"
+             Title="Orders">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ordersListView"
+                      HasUnevenRows="True"                       
+                  VerticalOptions="FillAndExpand"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame HasShadow="True" Margin="8">
+                                    <StackLayout>
+                                        <Label Text="{Binding title}" FontSize="Large"/>
+                                        <Image Source="{Binding featured_src}"/>
+                                        <Label Text="{Binding created_at}" FontSize="Small" FontAttributes="Italic"/>
+                                        <Label Text="{Binding price}" TextColor="Red"/>
+                                    </StackLayout>
+                                </Frame>
+
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
